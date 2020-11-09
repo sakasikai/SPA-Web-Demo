@@ -1,0 +1,28 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/project?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: mysql
+  aop:
+    proxy-target-class: true
+  jta:
+    bitronix:
+      properties:
+        server-id:
+
+
+#Mybatis
+mybatis:
+    # 搜索指定包别名
+    typeAliasesPackage: com.example.authDemo.pojo
+    # 配置mapper的扫描，找到所有的mapper.xml映射文件
+    mapperLocations: classpath:mybatis/mapper/**/*.xml
+    # 加载全局的配置文件
+    configLocation: classpath:mybatis/mybatis-config.xml
+
+
+#前后端连接
+server:
+  port: 12345
